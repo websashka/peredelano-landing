@@ -115,6 +115,23 @@ function Navbar({ isPopupOpen }) {
                     >
                         кому
                     </Link>
+                    <Link
+                        to="apply"
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                        className={styles.header__nav__link}
+                        activeClass={styles.header__nav__link_active}
+                        tabIndex={showNavbar ? 0 : -1}
+                        aria-label="Выступить"
+                        role="button"
+                        onClick={() => {
+                            window.open('/apply', '_blank', 'noopener,noreferrer');
+                        }}
+                    >
+                        выступить
+                    </Link>
                 </nav>
             </div>
         </header>
