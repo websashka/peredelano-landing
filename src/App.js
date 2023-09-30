@@ -1,37 +1,29 @@
-import { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from 'react-router-dom';
+import {useEffect, useState} from "react";
 import Header from "./components/Header";
 import Who from "./components/Who";
-import Where from "./components/Where";
 import Footer from "./components/Footer";
 import ScrollUpButton from "./components/ScrollUpButton";
-import Apply from "./components/Apply";
+import Where from "./components/Where";
 
 // import "./server"; // miragejs server
 
 function App() {
   const [isPopupOpen, setIsPopUpOpen] = useState(false);
+
+  useEffect(() => {
+    if (window.location.pathname === '/apply') {
+      window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfLYXyFD21hRxNxZRSoAA1UX7cAjDc_hcptE33wa8uK9y4Nvg/viewform';
+    }
+  }, [])
+
   return (
-  <Router>
     <div className="app">
-      <Header isPopupOpen={isPopupOpen} />
-      <Routes>
-        <Route path="/apply" element={<Apply />} />
-        <Route path="/" element={
-        <>
-          <Who />
-          <Where isPopupOpen={isPopupOpen} setIsPopUpOpen={setIsPopUpOpen} />
-          <Footer />
-          <ScrollUpButton />
-        </>
-        } />
-      </Routes>
+      <Header isPopupOpen={isPopupOpen}/>
+      <Who/>
+      <Where isPopupOpen={isPopupOpen} setIsPopUpOpen={setIsPopUpOpen}/>
+      <Footer/>
+      <ScrollUpButton/>
     </div>
-  </Router>
   );
 }
 
