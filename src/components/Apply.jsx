@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const Apply = () => {
   useEffect(() => {
-    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfLYXyFD21hRxNxZRSoAA1UX7cAjDc_hcptE33wa8uK9y4Nvg/viewform';
+    window.location.href = 'https://airtable.com/appbRs7OEZzeCA0B0/pag7tkqqBmzAjtYo9/form';
   }, []);
 
   return (
